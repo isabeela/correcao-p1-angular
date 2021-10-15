@@ -24,6 +24,20 @@ interface Response {
   };
 }
 
+
+interface EurBitCoinRate{
+  time: {
+    updated: string
+  };
+  bpi: {
+    BRL: {
+      rate_float: number
+    }
+  }
+}
+
+
+
 interface PriceUpdate {
   timestamp: Date;
   BRL: number;
