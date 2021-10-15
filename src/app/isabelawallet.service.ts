@@ -21,11 +21,6 @@ interface Response {
       rate: string;
       rate_float: number;
     };
-
-    BTC: {
-      rate: string;
-      rate_float: number;
-    };
   };
 }
 
