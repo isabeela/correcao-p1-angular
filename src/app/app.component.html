@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/']"> P1 </a>
+    <span
+      *ngIf="walletService.getCotacao() > 0"
+      class="valor"
+      style="color: rgb(0, 217, 100);"
+    >
+      + {{ walletService.getCotacao() | number }}
+    </span>
+
+    <span
+      *ngIf="walletService.getCotacao() < 0"
+      class="valor"
+      style="color: rgb(230, 80, 69);"
+    >
+      {{ walletService.getCotacao() | number }}
+    </span>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" [routerLink]="['/currency']">
+            Cotação
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/wallet']"> Carteira </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="perfil">
+  <h1>Isabela Baraldi Gandelman</h1>
+  <h2>RA: 0050832011041</h2>
+  <h3><a href="https://github.com/isabeela"> Perfil do github </a></h3>
+</div>
+
+<hr />
+<p class="rapido">
+  Acesso Rápido: <a [routerLink]="['/currency']"> Cotação </a> |
+  <a [routerLink]="['/wallet']"> Carteira </a>
+</p>
+
+<hr />
+
+<router-outlet></router-outlet>

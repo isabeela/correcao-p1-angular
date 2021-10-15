@@ -1,0 +1,18 @@
+<div class="cotacao">
+  <table>
+    <tr class="titulos">
+      <th>Data/hora</th>
+      <th>Bitcoin</th>
+      <th>Real</th>
+      <th>Dólar</th>
+      <th>Euro</th>
+    </tr>
+    <tr *ngFor="let preco of this.walletService.updateList">
+      <td>{{ preco.timestamp | date: 'short' }}</td>
+      <td>{{ preco.BTC | currency: 'BTC' }}</td>
+      <td>{{ preco.BRL | currency: 'BRL' }}</td>
+      <td>{{ preco.USD | currency: 'USD' }}</td>
+      <td>{{ preco.EUR | currency: 'EUR' }}</td>
+    </tr>
+  </table>
+</div>

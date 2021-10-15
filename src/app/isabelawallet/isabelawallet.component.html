@@ -1,0 +1,22 @@
+<div class="carteira">
+  <h1>Carteira</h1>
+
+  <input type="number" [(ngModel)]="newValue" />
+  <button (click)="adicionar()" class="add">+</button>
+  <button (click)="subtrair()" class="subt">-</button>
+
+  <h3>Bitcoins: {{ walletService.meuBit | number }}</h3>
+
+  <table>
+    <tr class="titulos">
+      <th>Real</th>
+      <th>Dólar</th>
+      <th>Euro</th>
+    </tr>
+    <tr *ngFor="let preco of this.walletService.updateList">
+      <td>{{ getBRL() | currency: 'BRL' }}</td>
+      <td>{{ getUSD() | currency: 'USD' }}</td>
+      <td>{{ getEUR() | currency: 'EUR' }}</td>
+    </tr>
+  </table>
+</div>
